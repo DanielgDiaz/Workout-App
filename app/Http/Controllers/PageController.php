@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Workout;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -11,8 +12,8 @@ class PageController extends Controller
         return view ('index');
     }
 
-    public function workout()
+    public function workout(Workout $workout)
     {
-        return view ('entrenamientos');
+        return view ('workout', compact('workout'));
     }
 }
