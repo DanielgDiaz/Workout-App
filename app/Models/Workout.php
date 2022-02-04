@@ -13,6 +13,10 @@ class Workout extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function wods(){
+        return $this->hasMany(Wod::class);
+    }
+
     public function getExcerptAttribute(){
         return substr($this->description, 0, 80) . "...";
     }
