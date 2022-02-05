@@ -29,7 +29,13 @@
              <p class="text-gray-300 text-xs">{{ $workout->created_at->diffForHumans() }}</p>       
            </div>
          </div>
-             Similares
+             <div class="grid grid-cols-2 gap-4 my-8">
+                <div class="grid grid-cols-3 gap-4 mt-8"> 
+                    @foreach($workout->similar() as $workout)
+                    <x-workout-card :workout="$workout" />
+                    @endforeach
+                </div>  
+             </div>
         </div>
     </div>
     
